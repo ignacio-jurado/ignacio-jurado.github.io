@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Ignacio Jurado</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16192b;
+    --paper: #f6f7fb;
+    --accent: #3556c8;
+    --accent-soft: #97a8e0;
+    --accent-bg: #ebeef8;
+    --muted: #5e6278;
+    --light-muted: #8b8fa6;
+    --border: #dddfe8;
+    --card-bg: #ffffff;
+    --subtle-bg: #f0f1f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(246, 247, 251, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--light-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--accent); }
+
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .mobile-toggle span {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--ink);
+    margin: 5px 0;
+  }
+
+  /* PAGE */
+  .page {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 100px 2rem 60px;
+  }
+
+  .page-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* CONSENT CARD */
+  .consent-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    transition: box-shadow 0.3s;
+    margin-bottom: 3.5rem;
+  }
+
+  .consent-card:hover {
+    box-shadow: 0 6px 24px rgba(22, 25, 43, 0.06);
+  }
+
+  .consent-card h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0.15rem;
+  }
+
+  .consent-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 0.68rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .consent-card p {
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.8;
+    max-width: 620px;
+    font-weight: 300;
+  }
+
+  .consent-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.88rem;
+    transition: gap 0.25s;
+  }
+
+  .consent-link:hover { gap: 0.65rem; }
+
+  .consent-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5rem;
+  }
+
+  .consent-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--accent-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+  }
+
+  /* ONGOING WORK */
+  .ongoing-list { list-style: none; }
+
+  .ongoing-item {
+    padding: 1rem 1rem;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    transition: background 0.25s;
+  }
+
+  .ongoing-item:hover { background: var(--subtle-bg); }
+
+  .ongoing-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-soft);
+    border-radius: 50%;
+    margin-top: 8px;
+  }
+
+  .ongoing-title {
+    font-weight: 500;
+    font-size: 0.94rem;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+    line-height: 1.5;
+  }
+
+  .ongoing-meta {
+    font-size: 0.83rem;
+    color: var(--light-muted);
+    font-weight: 300;
+  }
+
+  .ongoing-status {
+    display: inline-block;
+    font-size: 0.68rem;
+    padding: 0.12rem 0.45rem;
+    border-radius: 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-left: 0.3rem;
+    vertical-align: middle;
+  }
+
+  .ongoing-status.review {
+    background: #fff3e0;
+    color: #e65100;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.4);
+    padding: 2.5rem 2rem;
+    font-size: 0.82rem;
+  }
+
+  .footer-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.8rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.25s;
+    font-size: 0.82rem;
+  }
+
+  .footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+  @media (max-width: 768px) {
+    .page-title { font-size: 1.8rem; }
+    .consent-card { grid-template-columns: 1fr; padding: 1.5rem; }
+    .consent-side { display: none; }
+    .ongoing-item { grid-template-columns: 1fr; }
+    .ongoing-dot { display: none; }
+    .nav-links { display: none; }
+    .mobile-toggle { display: block; }
+    .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-name">Ignacio Jurado</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page">
+  <h1 class="page-title">Research</h1>
+  <p class="page-subtitle">Current projects and work in progress.</p>
+
+  <!-- CONSENT -->
+  <div class="section-header">
+    <span class="section-label">ERC Project</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="consent-card">
+    <div>
+      <h2>CONSENT</h2>
+      <span class="consent-badge">ERC Consolidator Grant 2024</span>
+      <p>
+        Why do electoral losers accept being governed by the winners? This project investigates the motivations behind losers' consent — and what happens when it breaks down in established democracies. We combine observational data, geographic analysis, and experimental methods to study one of the foundational pillars of democratic governance.
+      </p>
+      <a href="https://erc.europa.eu/news-events/news/consolidator-grants-2024-examples-projects" class="consent-link" target="_blank">
+        Learn more about the project →
+      </a>
+    </div>
+    <div class="consent-side">
+      <div class="consent-icon">🗳️</div>
+    </div>
+  </div>
+
+  <!-- ONGOING WORK -->
+  <div class="section-header">
+    <span class="section-label">Ongoing Work</span>
+    <span class="section-line"></span>
+  </div>
+  <ul class="ongoing-list">
+    <li class="ongoing-item">
+      <div class="ongoing-dot"></div>
+      <div>
+        <div class="ongoing-title">Losers' Consent in Polarized Elections: Experimental and Observational Evidence</div>
+        <div class="ongoing-meta">with Lluís Orriols</div>
+      </div>
+    </li>
+    <li class="ongoing-item">
+      <div class="ongoing-dot"></div>
+      <div>
+        <div class="ongoing-title">Polarization and Cooperation: A Behavioral Experiment</div>
+        <div class="ongoing-meta">with Albert Falcó-Gimeno and Sandra León</div>
+      </div>
+    </li>
+    <li class="ongoing-item">
+      <div class="ongoing-dot"></div>
+      <div>
+        <div class="ongoing-title">Immigrants' Reactions Against Outgroup Exposure</div>
+        <div class="ongoing-meta">with Josep Serrano-Serrat</div>
+      </div>
+    </li>
+    <li class="ongoing-item">
+      <div class="ongoing-dot"></div>
+      <div>
+        <div class="ongoing-title">Following the Leader Against Democracy? Evidence from the 2022 Brazilian presidential election</div>
+        <div class="ongoing-meta">with Fernando B. Mello <span class="ongoing-status review">Under Review</span></div>
+      </div>
+    </li>
+    <li class="ongoing-item">
+      <div class="ongoing-dot"></div>
+      <div>
+        <div class="ongoing-title">"That Could Be Me": Fear of Sending-Country Chaos Can Drive Immigration Attitudes</div>
+        <div class="ongoing-meta">with David Samuels, Fernando B. Mello, and Cesar Zucco</div>
+      </div>
+    </li>
+    <li class="ongoing-item">
+      <div class="ongoing-dot"></div>
+      <div>
+        <div class="ongoing-title">Roads, connectivity and votes</div>
+        <div class="ongoing-meta">with Joaquín Artés and Fernando de la Cuesta <span class="ongoing-status review">Under Review</span></div>
+      </div>
+    </li>
+    <li class="ongoing-item">
+      <div class="ongoing-dot"></div>
+      <div>
+        <div class="ongoing-title">Who Gets the Pork? The Political Geography of Distributive Benefits</div>
+        <div class="ongoing-meta"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>Ignacio Jurado · CSIC – Institute for Public Goods and Policies</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>document.querySelector(".mobile-toggle").addEventListener("click",function(){const n=document.querySelector(".nav-links");n.style.display=n.style.display==="flex"?"none":"flex";n.style.flexDirection="column";n.style.position="absolute";n.style.top="60px";n.style.left="0";n.style.right="0";n.style.background="rgba(246,247,251,0.98)";n.style.padding="1rem 2rem";n.style.borderBottom="1px solid #dddfe8";});</script>
+</body>
+</html>

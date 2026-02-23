@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Ignacio Jurado</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16192b;
+    --paper: #f6f7fb;
+    --accent: #3556c8;
+    --accent-soft: #97a8e0;
+    --accent-bg: #ebeef8;
+    --muted: #5e6278;
+    --light-muted: #8b8fa6;
+    --border: #dddfe8;
+    --card-bg: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(246,247,251,0.88); backdrop-filter: blur(16px); z-index: 100; border-bottom: 1px solid var(--border); }
+  .nav-inner { max-width: 1060px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .nav-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--light-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.25s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--accent); }
+  .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+  .mobile-toggle span { display: block; width: 20px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+
+  .page { max-width: 1060px; margin: 0 auto; padding: 100px 2rem 60px; }
+
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .page-header-left {}
+
+  .page-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+  }
+
+  .download-btn:hover {
+    background: #2a45a8;
+    transform: translateY(-1px);
+  }
+
+  .download-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+  }
+
+  .pdf-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(22,25,43,0.05);
+  }
+
+  .pdf-container iframe {
+    width: 100%;
+    height: 80vh;
+    min-height: 600px;
+    border: none;
+    display: block;
+  }
+
+  .pdf-fallback {
+    display: none;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .pdf-fallback p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  footer { background: var(--ink); color: rgba(255,255,255,0.4); padding: 2.5rem 2rem; font-size: 0.82rem; margin-top: 2rem; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .footer-links { display: flex; gap: 1.8rem; list-style: none; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.25s; font-size: 0.82rem; }
+  .footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+  @media (max-width: 768px) {
+    .page-title { font-size: 1.8rem; }
+    .page-header { flex-direction: column; align-items: flex-start; }
+    .pdf-container iframe { height: 60vh; min-height: 400px; }
+    .nav-links { display: none; }
+    .mobile-toggle { display: block; }
+    .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-name">Ignacio Jurado</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="cv.html" class="active">CV</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <h1 class="page-title">Curriculum Vitae</h1>
+      <p class="page-subtitle">Last updated February 2026</p>
+    </div>
+    <a href="https://www.dropbox.com/scl/fi/ko27ramz678izie30lzvy/CV_Ignacio_Jurado.pdf?rlkey=ryl1561jjh93hw5miwsyumw2i&st=ekrtcvvb&dl=1" class="download-btn" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download PDF
+    </a>
+  </div>
+
+  <div class="pdf-container">
+    <iframe src="https://www.dropbox.com/scl/fi/ko27ramz678izie30lzvy/CV_Ignacio_Jurado.pdf?rlkey=ryl1561jjh93hw5miwsyumw2i&st=ekrtcvvb&raw=1" title="CV — Ignacio Jurado"></iframe>
+    <div class="pdf-fallback">
+      <p>Unable to display the PDF in your browser.</p>
+      <a href="https://www.dropbox.com/scl/fi/ko27ramz678izie30lzvy/CV_Ignacio_Jurado.pdf?rlkey=ryl1561jjh93hw5miwsyumw2i&st=ekrtcvvb&dl=1" class="download-btn">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF instead
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>Ignacio Jurado · CSIC – Institute for Public Goods and Policies</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="cv.html" class="active">CV</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  // Fallback if iframe fails to load PDF
+  const iframe = document.querySelector('.pdf-container iframe');
+  const fallback = document.querySelector('.pdf-fallback');
+  iframe.addEventListener('error', () => {
+    iframe.style.display = 'none';
+    fallback.style.display = 'block';
+  });
+</script>
+
+<script>document.querySelector(".mobile-toggle").addEventListener("click",function(){const n=document.querySelector(".nav-links");n.style.display=n.style.display==="flex"?"none":"flex";n.style.flexDirection="column";n.style.position="absolute";n.style.top="60px";n.style.left="0";n.style.right="0";n.style.background="rgba(246,247,251,0.98)";n.style.padding="1rem 2rem";n.style.borderBottom="1px solid #dddfe8";});</script>
+</body>
+</html>

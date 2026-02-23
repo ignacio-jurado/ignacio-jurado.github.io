@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outreach — Ignacio Jurado</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16192b;
+    --paper: #f6f7fb;
+    --accent: #3556c8;
+    --accent-soft: #97a8e0;
+    --accent-bg: #ebeef8;
+    --muted: #5e6278;
+    --light-muted: #8b8fa6;
+    --border: #dddfe8;
+    --card-bg: #ffffff;
+    --subtle-bg: #f0f1f6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(246,247,251,0.88); backdrop-filter: blur(16px); z-index: 100; border-bottom: 1px solid var(--border); }
+  .nav-inner { max-width: 1060px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .nav-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--light-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.25s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--accent); }
+  .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+  .mobile-toggle span { display: block; width: 20px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+  .page { max-width: 1060px; margin: 0 auto; padding: 100px 2rem 60px; }
+  .page-title { font-family: 'DM Serif Display', serif; font-size: 2.4rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+  .page-subtitle { font-size: 0.95rem; color: var(--muted); font-weight: 300; margin-bottom: 3rem; max-width: 650px; line-height: 1.7; }
+  .section-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.6rem; }
+  .section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; white-space: nowrap; }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+  .section-gap { margin-top: 3.5rem; }
+
+  .cards-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; }
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.8rem; transition: box-shadow 0.3s, transform 0.25s; }
+  .card:hover { box-shadow: 0 6px 24px rgba(22,25,43,0.06); transform: translateY(-2px); }
+  .card.highlight { border-color: var(--accent-soft); }
+  .card-icon { width: 44px; height: 44px; background: var(--accent-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1rem; }
+  .card h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 0.4rem; color: var(--ink); line-height: 1.35; }
+  .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+  .card-link { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.9rem; color: var(--accent); text-decoration: none; font-weight: 500; font-size: 0.84rem; transition: gap 0.25s; }
+  .card-link:hover { gap: 0.55rem; }
+
+  .writing-list { list-style: none; }
+  .writing-item { padding: 0.9rem 1rem; border-radius: 8px; display: grid; grid-template-columns: 24px 1fr; gap: 1rem; align-items: baseline; transition: background 0.25s; }
+  .writing-item:hover { background: var(--subtle-bg); }
+  .writing-dot { width: 8px; height: 8px; background: var(--accent-soft); border-radius: 50%; margin-top: 8px; }
+  .writing-title { font-weight: 500; font-size: 0.92rem; color: var(--ink); line-height: 1.45; }
+  .writing-title a { color: var(--ink); text-decoration: none; transition: color 0.25s; }
+  .writing-title a:hover { color: var(--accent); }
+  .writing-meta { font-size: 0.82rem; color: var(--light-muted); font-weight: 300; }
+
+  .media-outlets { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .outlet-tag { display: inline-block; padding: 0.3rem 0.75rem; border-radius: 100px; font-size: 0.78rem; font-weight: 500; background: var(--subtle-bg); color: var(--muted); border: 1px solid var(--border); }
+  .outlet-tag.intl { background: var(--accent-bg); color: var(--accent); border-color: var(--accent-soft); }
+  .media-list { list-style: none; }
+  .media-item { padding: 0.9rem 1rem; border-radius: 8px; display: grid; grid-template-columns: 100px 1fr; gap: 1.2rem; align-items: baseline; transition: background 0.25s; }
+  .media-item:hover { background: var(--subtle-bg); }
+  .media-outlet { font-size: 0.82rem; font-weight: 500; color: var(--accent); }
+  .media-title { font-weight: 500; font-size: 0.92rem; color: var(--ink); line-height: 1.45; }
+  .media-title a { color: var(--ink); text-decoration: none; transition: color 0.25s; }
+  .media-title a:hover { color: var(--accent); }
+  .media-date { font-size: 0.78rem; color: var(--light-muted); font-weight: 300; }
+
+  footer { background: var(--ink); color: rgba(255,255,255,0.4); padding: 2.5rem 2rem; font-size: 0.82rem; margin-top: 2rem; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .footer-links { display: flex; gap: 1.8rem; list-style: none; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.25s; font-size: 0.82rem; }
+  .footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+  @media (max-width: 768px) {
+    .page-title { font-size: 1.8rem; }
+    .cards-row { grid-template-columns: 1fr; }
+    .media-item { grid-template-columns: 1fr; gap: 0.2rem; }
+    .writing-item { grid-template-columns: 1fr; }
+    .writing-dot { display: none; }
+    .nav-links { display: none; }
+    .mobile-toggle { display: block; }
+    .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-name">Ignacio Jurado</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="outreach.html" class="active">Outreach</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page">
+  <h1 class="page-title">Outreach</h1>
+  <p class="page-subtitle">Public engagement, media commentary, and writing beyond academia.</p>
+
+  <!-- REGULAR COLLABORATIONS -->
+  <div class="section-header">
+    <span class="section-label">Regular Collaborations</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="cards-row">
+    <div class="card highlight">
+      <div class="card-icon">📰</div>
+      <h3>Piedras de Papel</h3>
+      <p>Regular contributor to this collaborative blog on Spanish politics at <em>eldiario.es</em>. Co-author of <em>Aragón es Nuestro Ohio</em> (El Hombre del Tres, 2015).</p>
+      <a href="http://www.eldiario.es/autores/ignacio_jurado" class="card-link" target="_blank">Read my columns →</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">📺</div>
+      <h3>RTVE Collaborator</h3>
+      <p>Regular contributor to <em>La Hora de la 1</em> and other RTVE programming, providing expert commentary on Spanish and European politics (2024–).</p>
+      <a href="https://www.rtve.es/play/videos/la-hora-de-la-1/" class="card-link" target="_blank">Watch La Hora de la 1 →</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">📡</div>
+      <h3>La Sexta</h3>
+      <p>Regular contributor to La Sexta's news service and political programming (2016–).</p>
+      <a href="https://www.atresplayer.com/lasexta/noticias/" class="card-link" target="_blank">Watch La Sexta Noticias →</a>
+    </div>
+  </div>
+
+  <!-- WRITTEN CONTRIBUTIONS -->
+  <div class="section-gap">
+    <div class="section-header">
+      <span class="section-label">Written Contributions</span>
+      <span class="section-line"></span>
+    </div>
+    <p style="font-size: 0.92rem; color: var(--muted); font-weight: 300; line-height: 1.8; margin-bottom: 1.5rem; max-width: 650px;">
+      Beyond academic publishing, I have regularly written about politics and public policy for a wider audience. My op-eds and analyses have appeared in outlets like:
+    </p>
+    <div class="cards-row" style="margin-bottom: 1.5rem;">
+      <div class="card highlight">
+        <div class="card-icon">🇪🇸</div>
+        <h3>El País</h3>
+        <p>Articles on Spanish politics and public policy in Spain's newspaper of record.</p>
+        <a href="https://elpais.com/autor/ignacio-jurado-nebreda/#?rel=author_top" class="card-link" target="_blank">Read my articles →</a>
+      </div>
+      <div class="card highlight">
+        <div class="card-icon">🌐</div>
+        <h3>Letras Libres</h3>
+        <p>Op-eds on UK politics, Brexit, and the Conservative Party for this leading Spanish-language literary and political magazine.</p>
+        <a href="https://letraslibres.com/author/ignacio-jurado/" class="card-link" target="_blank">Read my op-eds →</a>
+      </div>
+      <div class="card highlight">
+        <div class="card-icon">📝</div>
+        <h3>El Confidencial</h3>
+        <p>Articles on Spanish and European politics, coalition governance, and territorial debates.</p>
+        <a href="https://www.elconfidencial.com/autores/ignacio-jurado-4115/" class="card-link" target="_blank">Read my articles →</a>
+      </div>
+    </div>
+    <ul class="writing-list">
+      <li class="writing-item">
+        <div class="writing-dot"></div>
+        <div>
+          <div class="writing-title"><a href="https://www.infolibre.es/opinion/luces-rojas/busca-proyecto-perdido_1_1095181.html">Se busca proyecto perdido</a></div>
+          <div class="writing-meta">infoLibre</div>
+        </div>
+      </li>
+      <li class="writing-item">
+        <div class="writing-dot"></div>
+        <div>
+          <div class="writing-title"><a href="http://blogs.lse.ac.uk/europpblog/2015/07/20/why-greeks-voted-the-way-they-did-in-the-bailout-referendum/">Why Greeks voted the way they did in the bailout referendum</a></div>
+          <div class="writing-meta">LSE EUROPP Blog · July 2015</div>
+        </div>
+      </li>
+      <li class="writing-item">
+        <div class="writing-dot"></div>
+        <div>
+          <div class="writing-title"><a href="http://blogs.lse.ac.uk/europpblog/2014/01/07/regionalised-party-systems-lead-to-lower-social-spending/">Electoral Regionalisation leads to lower social spending</a></div>
+          <div class="writing-meta">LSE EUROPP Blog · January 2014</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- QUOTED & INTERVIEWED -->
+  <div class="section-gap">
+    <div class="section-header">
+      <span class="section-label">Quoted & Interviewed</span>
+      <span class="section-line"></span>
+    </div>
+    <p style="font-size: 0.92rem; color: var(--muted); font-weight: 300; line-height: 1.8; margin-bottom: 1.5rem; max-width: 700px;">
+      I have been interviewed or quoted in newspapers, radio, and television from Spain, the United Kingdom, the United States, France, Ireland, the Netherlands, Switzerland, Germany, Italy, Argentina, Greece, Portugal, Venezuela, Colombia, Chile, Turkey, and Russia. Some of the contributions are listed below.
+    </p>
+
+    <div class="media-outlets">
+      <span class="outlet-tag intl">The Economist</span>
+      <span class="outlet-tag intl">The New York Times</span>
+      <span class="outlet-tag intl">The Wall Street Journal</span>
+      <span class="outlet-tag intl">Financial Times</span>
+      <span class="outlet-tag intl">The Guardian</span>
+      <span class="outlet-tag intl">Bloomberg</span>
+      <span class="outlet-tag intl">Reuters</span>
+      <span class="outlet-tag intl">Politico Europe</span>
+      <span class="outlet-tag intl">France 24</span>
+      <span class="outlet-tag intl">Slate.fr</span>
+      <span class="outlet-tag intl">CNBC</span>
+      <span class="outlet-tag intl">CNN en Español</span>
+      <span class="outlet-tag intl">The Globe and Mail</span>
+      <span class="outlet-tag intl">Euronews</span>
+      <span class="outlet-tag intl">Die Zeit</span>
+      <span class="outlet-tag intl">Der Tagesspiegel</span>
+      <span class="outlet-tag intl">RTÉ (Ireland)</span>
+      <span class="outlet-tag intl">Het Financieele Dagblad</span>
+      <span class="outlet-tag intl">BBC</span>
+      <span class="outlet-tag">infoLibre</span>
+      <span class="outlet-tag">El Confidencial</span>
+      <span class="outlet-tag">Cinco Días</span>
+      <span class="outlet-tag">Europa Press</span>
+      <span class="outlet-tag">Business Insider España</span>
+      <span class="outlet-tag">Cadena SER</span>
+      <span class="outlet-tag">EiTB</span>
+      <span class="outlet-tag">El Periódico de Catalunya</span>
+      <span class="outlet-tag">La Tercera (Chile)</span>
+      <span class="outlet-tag">Radio La Once Diez (Argentina)</span>
+      <span class="outlet-tag">Ahora Semanal</span>
+      <span class="outlet-tag">RTVE</span>
+    </div>
+
+    <ul class="media-list">
+      <li class="media-item">
+        <span class="media-outlet">El Periódico</span>
+        <div>
+          <div class="media-title"><a href="https://www.elperiodico.com/es/politica/20251228/edad-oro-emociones-negativas-motor-politica-elecciones-extremadura-125106361">La edad de oro de las emociones negativas como motor de la política</a></div>
+          <div class="media-date">December 2025</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Cadena SER</span>
+        <div>
+          <div class="media-title"><a href="https://cadenaser.com/nacional/2024/07/12/el-analista-politico-ignacio-jurado-considera-que-la-ruptura-de-vox-responde-a-la-amenaza-de-alvise-hay-una-parte-de-los-votantes-que-quieren-irse-a-una-fuerza-mucho-mas-radical-cadena-ser/">On the Vox split and the threat from Alvise's movement</a></div>
+          <div class="media-date">July 2024</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Cadena SER</span>
+        <div>
+          <div class="media-title"><a href="https://cadenaser.com/audio/1718027441_447_cut/">Political analysis on Spanish politics</a></div>
+          <div class="media-date">June 2024</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Reuters</span>
+        <div>
+          <div class="media-title"><a href="https://www.reuters.com/world/europe/catalonias-separatist-leader-quits-refuses-back-socialists-form-regional-2024-05-13/">Catalonia's separatist leader quits, refuses to back Socialists</a></div>
+          <div class="media-date">May 2024</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Reuters</span>
+        <div>
+          <div class="media-title"><a href="https://www.cnbc.com/amp/2024/04/29/spains-pedro-sanchez-stays-on-as-prime-minister-after-weighing-exit.html">On Sánchez's decision to stay on as PM after corruption probe</a></div>
+          <div class="media-date">April 2024</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Cadena SER</span>
+        <div>
+          <div class="media-title"><a href="https://cadenaser.com/nacional/2024/04/29/ultima-hora-de-la-decision-de-pedro-sanchez-comparecencia-del-presidente-del-gobierno-y-reacciones-tras-su-carta-en-directo-cadena-ser/">On Sánchez's letter and decision to continue as PM</a></div>
+          <div class="media-date">April 2024</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Cadena SER</span>
+        <div>
+          <div class="media-title"><a href="https://cadenaser.com/audio/1714395758481/">Political analysis</a></div>
+          <div class="media-date">April 2024</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Yahoo/Reuters</span>
+        <div>
+          <div class="media-title"><a href="https://www.yahoo.com/news/come-clean-spaniards-demand-hunt-152519696.html">'Come clean': Spaniards demand answers</a></div>
+          <div class="media-date">2024</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">El Confidencial</span>
+        <div>
+          <div class="media-title"><a href="https://blogs.elconfidencial.com/espana/tribuna/2024-03-25/irredentismo-70-fractura-entre-junts-erc_3854597/">El irredentismo del 70% y la fractura entre Junts y ERC</a></div>
+          <div class="media-date">March 2024</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Reuters</span>
+        <div>
+          <div class="media-title"><a href="https://news.yahoo.com/spain-faces-political-uncertainty-fails-030339158.html">Spain's 2023 election deadlock and the role of Puigdemont</a></div>
+          <div class="media-date">July 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">El Confidencial</span>
+        <div>
+          <div class="media-title"><a href="https://www.elconfidencial.com/espana/2023-07-07/polarizacion-debate-territorial-tercio-estado-autonomias_3685493/">Polarización y debate territorial: un tercio contra el Estado de las Autonomías</a></div>
+          <div class="media-date">July 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Tagesspiegel</span>
+        <div>
+          <div class="media-title"><a href="https://www.tagesspiegel.de/internationales/regierungsbildung-in-spanien-pedro-sanchez-ist-fast-am-ziel-10715794.html">Regierungsbildung in Spanien: Pedro Sánchez ist fast am Ziel</a></div>
+          <div class="media-date">2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">El Confidencial</span>
+        <div>
+          <div class="media-title"><a href="https://www.elconfidencial.com/economia/2023-11-14/jovenes-crecimiento-economico-riqueza_3773072/">Jóvenes, crecimiento económico y riqueza</a></div>
+          <div class="media-date">November 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">El Confidencial</span>
+        <div>
+          <div class="media-title"><a href="https://blogs.elconfidencial.com/espana/tribuna/2023-11-12/verdadera-anomalia-politica-espanola_3772083/">La verdadera anomalía política española</a></div>
+          <div class="media-date">November 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Cinco Días</span>
+        <div>
+          <div class="media-title"><a href="https://cincodias.elpais.com/economia/2023-11-14/el-30-de-los-jovenes-espanoles-tiene-dificultades-para-cubrir-sus-gastos-basicos.html">El 30% de los jóvenes españoles tiene dificultades para cubrir sus gastos básicos</a></div>
+          <div class="media-date">November 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Europa Press</span>
+        <div>
+          <div class="media-title"><a href="https://www.europapress.es/sociedad/noticia-265-espanoles-30-34-anos-aun-vive-padres-estudio-20231114000052.html">El 26,5% de los españoles de 30-34 años aún vive con sus padres</a></div>
+          <div class="media-date">November 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">France 24</span>
+        <div>
+          <div class="media-title"><a href="https://www.france24.com/en/europe/20230528-spain-s-regional-elections-conservatives-leading-with-a-third-of-votes-in">Spain's rightward swing in local and regional elections</a></div>
+          <div class="media-date">May 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">CNN Español</span>
+        <div>
+          <div class="media-title"><a href="https://cnnespanol.cnn.com/2023/05/28/elecciones-municipales-y-autonomicas-de-espana-el-partido-popular-logra-triunfos-en-los-comicios-reux">El PP logra triunfos en las elecciones municipales y autonómicas</a></div>
+          <div class="media-date">May 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Die Zeit</span>
+        <div>
+          <div class="media-title"><a href="https://www.zeit.de/politik/ausland/2023-05/kommunalwahlen-spanien-volkspartei-vox">Kommunalwahlen Spanien: Volkspartei und Vox</a></div>
+          <div class="media-date">May 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">La Tercera</span>
+        <div>
+          <div class="media-title"><a href="https://www.latercera.com/la-tercera-sabado/noticia/espana-tras-el-23-j-el-regreso-del-bipartidismo/ALAUTLWELRE7XOXF7Q6KLHTGK4/">España tras el 23-J: el regreso del bipartidismo</a></div>
+          <div class="media-date">July 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">NYT</span>
+        <div>
+          <div class="media-title"><a href="https://www.nytimes.com/2023/05/29/world/europe/spain-snap-election.html">Spain calls snap election after regional vote losses</a></div>
+          <div class="media-date">May 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Globe & Mail</span>
+        <div>
+          <div class="media-title"><a href="https://www.theglobeandmail.com/investing/markets/indices/ESG/pressreleases/17261383/spanish-prime-minister-calls-early-general-election-after-battering-in-regional-vote/">Spanish PM calls early election after battering in regional vote</a></div>
+          <div class="media-date">May 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">La Tercera</span>
+        <div>
+          <div class="media-title"><a href="https://www.latercera.com/la-tercera-pm/noticia/ignacio-jurado-cientista-politico-espanol-el-voto-de-castigo-al-psoe-es-porque-sanchez-tiene-a-podemos-en-su-gobierno/ABBAFTPHOJHLXD6325SVWCBRPY/">The protest vote against PSOE is because Sánchez has Podemos in his government</a></div>
+          <div class="media-date">May 2023</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Bloomberg</span>
+        <div>
+          <div class="media-title"><a href="https://www.bloomberg.com/news/articles/2021-09-24/former-catalan-president-arrested-after-evading-police-for-years">On the arrest of former Catalan president Puigdemont</a></div>
+          <div class="media-date">September 2021</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Bus. Insider</span>
+        <div>
+          <div class="media-title"><a href="https://www.businessinsider.es/politica/elecciones-madrid-4m-6-claves-entender-juega-madrid-851213">Elecciones Madrid 4M: 6 claves para entender qué se juega Madrid</a></div>
+          <div class="media-date">2021</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">El Confidencial</span>
+        <div>
+          <div class="media-title"><a href="https://blogs.elconfidencial.com/mundo/tribuna-internacional/2021-03-18/dominar-arte-gobernar-coalicion_2996203/">Dominar el arte de gobernar en coalición</a></div>
+          <div class="media-date">March 2021</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">BBC Mundo</span>
+        <div>
+          <div class="media-title"><a href="https://www.bbc.com/mundo/noticias-internacional-57529020">Interview on Spanish and international politics</a></div>
+          <div class="media-date">2021</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">EiTB</span>
+        <div>
+          <div class="media-title"><a href="https://www.eitb.eus/es/television/programas/en-jake/videos/detalle/8006096/video-la-izquierda-coge-protagonismo-campana-electoral-madrid/">The left takes centre stage in Madrid's electoral campaign</a></div>
+          <div class="media-date">2021</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Economist</span>
+        <div>
+          <div class="media-title"><a href="https://www.economist.com/europe/2020/04/16/southern-europes-millennials-suffer-two-huge-crises-by-their-mid-30s">Southern Europe's millennials suffer two huge crises by their mid-30s</a></div>
+          <div class="media-date">April 2020</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">NYT</span>
+        <div>
+          <div class="media-title"><a href="https://www.nytimes.com/2019/11/30/world/europe/spain-podemos-iglesias-socialists.html">On Podemos, Iglesias, and the Socialists' coalition</a></div>
+          <div class="media-date">November 2019</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">El País</span>
+        <div>
+          <div class="media-title"><a href="https://english.elpais.com/elpais/2019/07/04/inenglish/1562225341_303951.html">Analysis of Spanish politics</a></div>
+          <div class="media-date">July 2019</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Cadena SER</span>
+        <div>
+          <div class="media-title"><a href="https://cadenaser.com/programa/2020/06/14/a_vivir_que_son_dos_dias/1592128118_666781.html">A Vivir Que Son Dos Días — political analysis</a></div>
+          <div class="media-date">June 2020</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Guardian</span>
+        <div>
+          <div class="media-title"><a href="https://www.theguardian.com/world/2018/dec/09/far-right-andalucia-seville-vox-party-shockwave-spanish-politics">Far-right Vox party sends shockwave through Spanish politics</a></div>
+          <div class="media-date">December 2018</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Bloomberg</span>
+        <div>
+          <div class="media-title"><a href="https://www.bloomberg.com/news/articles/2019-02-12/catalonia-crisis-still-shaping-spain-as-separatist-trial-begins">Catalonia crisis still shaping Spain as separatist trial begins</a></div>
+          <div class="media-date">February 2019</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">La Once Diez</span>
+        <div>
+          <div class="media-title"><a href="https://www.youtube.com/watch?v=3M904EuBlVw">Corresponsales en Línea — interview on Spanish politics</a></div>
+          <div class="media-date">2017</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Slate.fr</span>
+        <div>
+          <div class="media-title"><a href="https://www.slate.fr/story/111641/recette-ciudadanos-parti-influent">La recette de Ciudadanos pour devenir un parti influent</a></div>
+          <div class="media-date">2016</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">infoLibre</span>
+        <div>
+          <div class="media-title"><a href="https://www.infolibre.es/politica/pros-contras-sanchez-adelantar-elecciones-primavera-otono_1_1167278.html">Pros y contras de adelantar elecciones en primavera u otoño</a></div>
+          <div class="media-date">2016</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">infoLibre</span>
+        <div>
+          <div class="media-title"><a href="https://www.infolibre.es/politica/razones-explican-no-atrae-momento-votantes-pierde-psoe_1_1132595.amp.html">Las razones que explican por qué el PSOE pierde votantes</a></div>
+          <div class="media-date">2016</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">infoLibre</span>
+        <div>
+          <div class="media-title"><a href="https://www.infolibre.es/politica/segundo-tiempo-negociacion-inicia-blindaje-pacto-psoe-ciudadanos_1_1123553.html">El segundo tiempo de la negociación: el blindaje del pacto PSOE-Ciudadanos</a></div>
+          <div class="media-date">2016</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">infoLibre</span>
+        <div>
+          <div class="media-title"><a href="https://www.infolibre.es/politica/debates-electorales-sirven-activar-indecisos-cambiar-sentido-voto_1_1120398.html">Los debates electorales sirven para activar a los indecisos</a></div>
+          <div class="media-date">2016</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Ahora</span>
+        <div>
+          <div class="media-title"><a href="https://www.ahorasemanal.es/ignacio-jurado:-los-viejos-partidos-toman-aire-y-la-nueva-politica-se-enfria">Los viejos partidos toman aire y la nueva política se enfría</a></div>
+          <div class="media-date">2017</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Euronews</span>
+        <div>
+          <div class="media-title"><a href="https://www.youtube.com/watch?v=yiqMaeOgx8M">Interview on Spanish politics</a></div>
+          <div class="media-date">2017</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Politico EU</span>
+        <div>
+          <div class="media-title"><a href="https://www.politico.eu/article/catalonia-independence-spain-mariano-rajoy-non-strategy/">Catalonia independence: Rajoy's non-strategy</a></div>
+          <div class="media-date">October 2017</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">RTÉ Radio 1</span>
+        <div>
+          <div class="media-title"><a href="https://www.rte.ie/radio1/morning-ireland/programmes/2017/1009/910857-morning-ireland-monday-9-octob">Morning Ireland — interview on the Catalan crisis</a></div>
+          <div class="media-date">October 2017</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Het FD</span>
+        <div>
+          <div class="media-title"><a href="https://fd.nl/economie-politiek/1222757/madrid-koerst-aan-op-ingrijpen-in-catalonie">Madrid koerst aan op ingrijpen in Catalonië</a></div>
+          <div class="media-date">October 2017</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Het FD</span>
+        <div>
+          <div class="media-title"><a href="https://fd.nl/economie-politiek/1223236/spaanse-regering-biedt-puigdemont-uitweg-via-verkiezingen">Spaanse regering biedt Puigdemont uitweg via de stembus</a></div>
+          <div class="media-date">October 2017</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">Het FD</span>
+        <div>
+          <div class="media-title"><a href="https://fd.nl/economie-politiek/1224586/alle-partijen-hebben-fouten-gemaakt">Alle partijen hebben fouten gemaakt in Catalaanse kwestie</a></div>
+          <div class="media-date">2017</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">FT</span>
+        <div>
+          <div class="media-title"><a href="https://www.ft.com/content/282e5866-a840-11e7-ab55-27219df83c97">On Catalonia and Spanish politics</a></div>
+          <div class="media-date">October 2017</div>
+        </div>
+      </li>
+      <li class="media-item">
+        <span class="media-outlet">WSJ</span>
+        <div>
+          <div class="media-title"><a href="https://www.wsj.com/articles/catalan-president-set-to-address-issue-of-independence-1507636964">Catalan president set to address issue of independence</a></div>
+          <div class="media-date">October 2017</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>Ignacio Jurado · CSIC – Institute for Public Goods and Policies</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="outreach.html" class="active">Outreach</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>document.querySelector(".mobile-toggle").addEventListener("click",function(){const n=document.querySelector(".nav-links");n.style.display=n.style.display==="flex"?"none":"flex";n.style.flexDirection="column";n.style.position="absolute";n.style.top="60px";n.style.left="0";n.style.right="0";n.style.background="rgba(246,247,251,0.98)";n.style.padding="1rem 2rem";n.style.borderBottom="1px solid #dddfe8";});</script>
+</body>
+</html>

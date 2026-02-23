@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Ignacio Jurado</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16192b;
+    --paper: #f6f7fb;
+    --accent: #3556c8;
+    --accent-soft: #97a8e0;
+    --accent-bg: #ebeef8;
+    --muted: #5e6278;
+    --light-muted: #8b8fa6;
+    --border: #dddfe8;
+    --card-bg: #ffffff;
+    --subtle-bg: #f0f1f6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(246,247,251,0.88); backdrop-filter: blur(16px); z-index: 100; border-bottom: 1px solid var(--border); }
+  .nav-inner { max-width: 1060px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .nav-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--light-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.25s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--accent); }
+  .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+  .mobile-toggle span { display: block; width: 20px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+
+  .page { max-width: 1060px; margin: 0 auto; padding: 100px 2rem 60px; }
+  .page-title { font-family: 'DM Serif Display', serif; font-size: 2.4rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+  .page-subtitle { font-size: 0.95rem; color: var(--muted); font-weight: 300; margin-bottom: 3rem; max-width: 600px; line-height: 1.7; }
+
+  .section-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.6rem; }
+  .section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; white-space: nowrap; }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+  .section-gap { margin-top: 3.5rem; }
+
+  /* TABLE-LIKE PUBLICATION LIST */
+  .pub-table { list-style: none; }
+
+  .pub-row {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 1.5rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    align-items: baseline;
+    transition: background 0.25s;
+  }
+
+  .pub-row:hover { background: var(--subtle-bg); }
+
+  .pub-year {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--accent);
+    padding-top: 0.05rem;
+  }
+
+  .pub-year-spacer {
+    /* Empty cell for subsequent papers in the same year */
+  }
+
+  .pub-title {
+    font-weight: 500;
+    font-size: 0.94rem;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+    line-height: 1.45;
+  }
+
+  .pub-title a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+
+  .pub-title a:hover { color: var(--accent); }
+
+  .pub-meta {
+    font-size: 0.83rem;
+    color: var(--light-muted);
+    font-weight: 300;
+  }
+
+  .pub-meta em { font-style: italic; }
+
+  .pub-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    padding: 0.12rem 0.45rem;
+    border-radius: 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+
+  .pub-badge.forthcoming { background: #e3f2e8; color: #2a7a42; }
+  .pub-badge.award { background: #fff8e1; color: #f57f17; }
+
+  /* Year divider — subtle line between year groups */
+  .year-divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background: var(--border);
+    margin: 0.3rem 0;
+    opacity: 0.5;
+  }
+
+  footer { background: var(--ink); color: rgba(255,255,255,0.4); padding: 2.5rem 2rem; font-size: 0.82rem; margin-top: 2rem; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .footer-links { display: flex; gap: 1.8rem; list-style: none; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.25s; font-size: 0.82rem; }
+  .footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+  @media (max-width: 768px) {
+    .page-title { font-size: 1.8rem; }
+    .pub-row { grid-template-columns: 48px 1fr; gap: 0.8rem; }
+    .pub-year { font-size: 0.88rem; }
+    .nav-links { display: none; }
+    .mobile-toggle { display: block; }
+    .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-name">Ignacio Jurado</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page">
+  <h1 class="page-title">Publications</h1>
+  <p class="page-subtitle">Peer-reviewed articles, book chapters, and other published work.</p>
+
+  <!-- JOURNAL ARTICLES -->
+  <div class="section-header">
+    <span class="section-label">Journal Articles</span>
+    <span class="section-line"></span>
+  </div>
+  <ul class="pub-table">
+
+    <li class="pub-row">
+      <span class="pub-year">2025</span>
+      <div>
+        <div class="pub-title">South-South Immigration and Redistribution Preferences</div>
+        <div class="pub-meta">with Josep Serrano-Serrat · <em>World Politics</em> <span class="pub-badge forthcoming">Forthcoming</span></div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2025</span>
+      <div>
+        <div class="pub-title"><a href="https://www.cambridge.org/core/journals/british-journal-of-political-science/article/leftwing-governments-and-farright-success/8C6A6D5E02B4BD0B586A572680DE62D0">Do left-wing policies fuel far right success?</a></div>
+        <div class="pub-meta">with Albert Falcó-Gimeno & Markus Wagner · <em>British Journal of Political Science</em> <span class="pub-badge forthcoming">Forthcoming</span></div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2025</span>
+      <div>
+        <div class="pub-title"><a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/compulsory-civic-duty-and-turnout-evidence-from-a-natural-experiment/A4513AB17F3E98BD251DD07F2552D7E0">Compulsory civic duty and turnout: evidence from a natural experiment</a></div>
+        <div class="pub-meta">with Joaquín Artés · <em>Political Science Research and Methods</em>, 13(1), 183–192</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2023</span>
+      <div>
+        <div class="pub-title"><a href="https://journals.sagepub.com/doi/full/10.1177/10659129231160148">Economic Shocks and Fiscal Policy Preferences: Evidence from COVID-19 in Spain</a></div>
+        <div class="pub-meta">with Alexander Kuo · <em>Political Research Quarterly</em>, 76(4), 1573–1588</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2023</span>
+      <div>
+        <div class="pub-title"><a href="https://ejpr.onlinelibrary.wiley.com/doi/10.1111/1475-6765.12532">Daring to Fail: Supranational Constraints and Input-Oriented Voting</a></div>
+        <div class="pub-meta">with Nikitas Konstantinidis & Elias Dinas · <em>European Journal of Political Research</em>, 62(3), 830–851</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2022</span>
+      <div>
+        <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0261379422000865">Retrospective Voting under Supranational Constraints</a></div>
+        <div class="pub-meta">with Pablo Fernández-Vázquez · <em>Electoral Studies</em>, 80, 102530</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2022</span>
+      <div>
+        <div class="pub-title"><a href="https://journals.sagepub.com/doi/pdf/10.1177/14651165221107100">Economic perceptions and attitudes towards the European Union: a survey experiment</a></div>
+        <div class="pub-meta"><em>European Union Politics</em></div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2021</span>
+      <div>
+        <div class="pub-title"><a href="https://www.cambridge.org/core/journals/international-organization/article/abs/brexit-dilemmas-shaping-postwithdrawal-relations-with-a-leaving-state/46996ACF44C733F325D743CD9E47A42A">Shaping post-withdrawal relations with a leaving state: Brexit dilemmas and public opinion</a></div>
+        <div class="pub-meta">with Sandra León & Stefanie Walter · <em>International Organization</em></div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2021</span>
+      <div>
+        <div class="pub-title"><a href="https://www.frontiersin.org/articles/10.3389/fpos.2021.685199/full">Economic Crisis and Attitudes Towards Democracy: How Ideology Moderates Reactions to Economic Downturn</a></div>
+        <div class="pub-meta">with Rosa M. Navarrete · <em>Frontiers in Political Science</em>, Vol 3</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2021</span>
+      <div>
+        <div class="pub-title"><a href="https://linkinghub.elsevier.com/retrieve/pii/S0261379421000081">The Europeanization of national elections: The role of country characteristics in shaping EU issue voting</a></div>
+        <div class="pub-meta">with Rosa M. Navarrete · <em>Electoral Studies</em>, Vol. 71</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2020</span>
+      <div>
+        <div class="pub-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/gove.12496">Economic globalization and decentralization: a centrifugal or centripetal relationship?</a></div>
+        <div class="pub-meta">with Sandra León · <em>Governance</em>, 34(3), 665–686 <span class="pub-badge award">IEA Prize 2020</span></div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2020</span>
+      <div>
+        <div class="pub-title"><a href="https://journals.sagepub.com/eprint/YZNXYWDEAIQEIKPUTATU/full">Keeping the euro at any cost? Explaining attitudes toward the euro-austerity trade-off in Greece</a></div>
+        <div class="pub-meta">with Stefanie Walter, Nikitas Konstantinidis & Elias Dinas · <em>European Union Politics</em>, Vol 21, 383–405</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2020</span>
+      <div>
+        <div class="pub-title"><a href="https://www.tandfonline.com/doi/full/10.1080/17457289.2020.1727484">One or Two Arenas? The Break-up between National and Regional Elections</a></div>
+        <div class="pub-meta">with Francesc Amat & Sandra León · <em>Journal of Elections, Public Opinion, and Parties</em>, Vol 30(3), 275–296</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2019</span>
+      <div>
+        <div class="pub-title"><a href="https://www.cambridge.org/core/journals/british-journal-of-political-science/article/div-classtitlegeography-matters-the-conditional-effect-of-electoral-systems-on-social-spendingdiv/BDC5BE03E25E24FAE6BA6DE8E1C03466">Geography Matters: The Conditional Effect of Electoral Systems on Social Spending</a></div>
+        <div class="pub-meta">with Sandra León · <em>British Journal of Political Science</em></div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2018</span>
+      <div>
+        <div class="pub-title"><a href="https://www.cambridge.org/core/journals/international-organization/article/noncooperation-by-popular-vote-expectations-foreign-intervention-and-the-vote-in-the-2015-greek-bailout-referendum/3833456CA8B5A38D1402E43D084B0CCF">Non-cooperation by popular vote: Expectations, foreign intervention, and the vote in the 2015 Greek bailout referendum</a></div>
+        <div class="pub-meta">with Stefanie Walter, Elias Dinas & Nikitas Konstantinidis · <em>International Organization</em>, 72(4), 969–994</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2018</span>
+      <div>
+        <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s11127-018-0548-y">Government Fragmentation and Fiscal Deficits: A Regression Discontinuity Approach</a></div>
+        <div class="pub-meta">with Joaquín Artés · <em>Public Choice</em>, 175(3-4), 367–391 <span class="pub-badge award">Pedrós Prize 2014</span></div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2018</span>
+      <div>
+        <div class="pub-title"><a href="https://www.tandfonline.com/doi/full/10.1080/01402382.2017.1405325">Passing the Buck? Responsibility attribution and cognitive bias in multilevel democracies</a></div>
+        <div class="pub-meta">with Sandra León & Amuitz Garmendia-Madariaga · <em>West European Politics</em>, 41(3), 660–682</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2018</span>
+      <div>
+        <div class="pub-title"><a href="https://link.springer.com/article/10.1007%2Fs11127-018-0522-8">The effect of valence and ideology in campaign conversion</a></div>
+        <div class="pub-meta">with Enrique García-Viñuela & Pedro Riera · <em>Public Choice</em>, 175(1-2), 155–179</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2017</span>
+      <div>
+        <div class="pub-title"><a href="http://onlinelibrary.wiley.com/doi/10.1111/1475-6765.12198/full">Economic Crises and the Nationalization of Politics</a></div>
+        <div class="pub-meta">with Sandra León · <em>European Journal of Political Research</em>, 56(4), 777–800</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2016</span>
+      <div>
+        <div class="pub-title"><a href="http://www.tandfonline.com/doi/pdf/10.1080/13608746.2016.1154709">Allocating Campaign Effort in Spain: Evidence from Four General Elections</a></div>
+        <div class="pub-meta">with Enrique García-Viñuela & Pedro Riera · <em>South European Society and Politics</em>, Vol. 21(2), 243–262</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2015</span>
+      <div>
+        <div class="pub-title"><a href="http://ppq.sagepub.com/content/21/5/738">Strategic Voting and Non-Voting in Spanish Elections</a></div>
+        <div class="pub-meta">with Enrique García-Viñuela & Joaquín Artés · <em>Party Politics</em>, Vol. 21(5), 738–749</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2014</span>
+      <div>
+        <div class="pub-title"><a href="http://onlinelibrary.wiley.com/doi/10.1111/1475-6765.12035/pdf">Party System Nationalisation and Social Spending</a></div>
+        <div class="pub-meta"><em>European Journal of Political Research</em>, 53(2), 288–307</div>
+      </div>
+    </li>
+    <li class="pub-row">
+      <span class="pub-year">2011</span>
+      <div>
+        <div class="pub-title"><a href="http://www.sciencedirect.com/science/article/pii/S0176268011000280">Minority Governments and Budget Deficits: The Role of the Opposition</a></div>
+        <div class="pub-meta">with Albert Falcó-Gimeno · <em>European Journal of Political Economy</em>, Vol. 27(3), 554–565</div>
+      </div>
+    </li>
+
+  </ul>
+
+  <!-- OTHER PUBLICATIONS -->
+  <div class="section-gap">
+    <div class="section-header">
+      <span class="section-label">Other Publications</span>
+      <span class="section-line"></span>
+    </div>
+    <ul class="pub-table">
+      <li class="pub-row">
+        <span class="pub-year">2015</span>
+        <div>
+          <div class="pub-title"><a href="http://link.springer.com/chapter/10.1007/978-3-319-15551-7_19">Fiscal Deficits and Type of Government: A Study of Spanish Local Elections</a></div>
+          <div class="pub-meta">with Joaquín Artés · In <em>Political Economy of Governance: Institutions and Elections</em>, eds. N. Schofield & G. Caballero. Springer</div>
+        </div>
+      </li>
+      <li class="pub-row">
+        <span class="pub-year">2013</span>
+        <div>
+          <div class="pub-title"><a href="http://www.revistasice.com/CachePDF/CICE_85_123-142__5E7732D7FE6D3DBB316FEA3C60849F32.pdf">Políticas sociales, concentración geográfica y sistemas electorales</a></div>
+          <div class="pub-meta">with Sandra León · <em>Cuadernos Económicos del ICE</em>, 85, 123–142</div>
+        </div>
+      </li>
+      <li class="pub-row">
+        <span class="pub-year">2012</span>
+        <div>
+          <div class="pub-title">Actitudes, uso y propuestas sobre el sistema sanitario español</div>
+          <div class="pub-meta"><em>Encuentros Interdisciplinares</em>, 14(41), 37–47</div>
+        </div>
+      </li>
+      <li class="pub-row">
+        <span class="pub-year">2009</span>
+        <div>
+          <div class="pub-title"><a href="http://www.march.es/ceacs/publicaciones/working/archivos/WP248-AmatJuradoyLeon.pdf">A Political Theory of Decentralization Dynamics</a></div>
+          <div class="pub-meta">with Francesc Amat & Sandra León · <em>Juan March Institute Working Paper Series</em>, 248</div>
+        </div>
+      </li>
+      <li class="pub-row">
+        <span class="pub-year">2008</span>
+        <div>
+          <div class="pub-title"><a href="http://www.funcas.es/publicaciones/Sumario.aspx?IdRef=7-05464">A Political Look into Budget Deficits: The Role of Minority Governments and Oppositions</a></div>
+          <div class="pub-meta">with Albert Falcó-Gimeno · <em>Documentos de Trabajo FUNCAS</em>, 464</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>Ignacio Jurado · CSIC – Institute for Public Goods and Policies</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>document.querySelector(".mobile-toggle").addEventListener("click",function(){const n=document.querySelector(".nav-links");n.style.display=n.style.display==="flex"?"none":"flex";n.style.flexDirection="column";n.style.position="absolute";n.style.top="60px";n.style.left="0";n.style.right="0";n.style.background="rgba(246,247,251,0.98)";n.style.padding="1rem 2rem";n.style.borderBottom="1px solid #dddfe8";});</script>
+</body>
+</html>
