@@ -6,18 +6,7 @@
 <title>Outreach — Ignacio Jurado</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #16192b;
-    --paper: #f6f7fb;
-    --accent: #3556c8;
-    --accent-soft: #97a8e0;
-    --accent-bg: #ebeef8;
-    --muted: #5e6278;
-    --light-muted: #8b8fa6;
-    --border: #dddfe8;
-    --card-bg: #ffffff;
-    --subtle-bg: #f0f1f6;
-  }
+  :root { --ink: #16192b; --paper: #f6f7fb; --accent: #3556c8; --accent-soft: #97a8e0; --accent-bg: #ebeef8; --muted: #5e6278; --light-muted: #8b8fa6; --border: #dddfe8; --card-bg: #ffffff; --subtle-bg: #f0f1f6; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
   nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(246,247,251,0.88); backdrop-filter: blur(16px); z-index: 100; border-bottom: 1px solid var(--border); }
@@ -36,7 +25,6 @@
   .section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; white-space: nowrap; }
   .section-line { flex: 1; height: 1px; background: var(--border); }
   .section-gap { margin-top: 3.5rem; }
-
   .cards-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; }
   .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.8rem; transition: box-shadow 0.3s, transform 0.25s; }
   .card:hover { box-shadow: 0 6px 24px rgba(22,25,43,0.06); transform: translateY(-2px); }
@@ -46,7 +34,6 @@
   .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
   .card-link { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.9rem; color: var(--accent); text-decoration: none; font-weight: 500; font-size: 0.84rem; transition: gap 0.25s; }
   .card-link:hover { gap: 0.55rem; }
-
   .writing-list { list-style: none; }
   .writing-item { padding: 0.9rem 1rem; border-radius: 8px; display: grid; grid-template-columns: 24px 1fr; gap: 1rem; align-items: baseline; transition: background 0.25s; }
   .writing-item:hover { background: var(--subtle-bg); }
@@ -55,7 +42,6 @@
   .writing-title a { color: var(--ink); text-decoration: none; transition: color 0.25s; }
   .writing-title a:hover { color: var(--accent); }
   .writing-meta { font-size: 0.82rem; color: var(--light-muted); font-weight: 300; }
-
   .media-outlets { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
   .outlet-tag { display: inline-block; padding: 0.3rem 0.75rem; border-radius: 100px; font-size: 0.78rem; font-weight: 500; background: var(--subtle-bg); color: var(--muted); border: 1px solid var(--border); }
   .outlet-tag.intl { background: var(--accent-bg); color: var(--accent); border-color: var(--accent-soft); }
@@ -67,13 +53,11 @@
   .media-title a { color: var(--ink); text-decoration: none; transition: color 0.25s; }
   .media-title a:hover { color: var(--accent); }
   .media-date { font-size: 0.78rem; color: var(--light-muted); font-weight: 300; }
-
   footer { background: var(--ink); color: rgba(255,255,255,0.4); padding: 2.5rem 2rem; font-size: 0.82rem; margin-top: 2rem; }
   .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
   .footer-links { display: flex; gap: 1.8rem; list-style: none; }
   .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.25s; font-size: 0.82rem; }
   .footer-links a:hover { color: rgba(255,255,255,0.85); }
-
   @media (max-width: 768px) {
     .page-title { font-size: 1.8rem; }
     .cards-row { grid-template-columns: 1fr; }
@@ -139,54 +123,76 @@
       <span class="section-line"></span>
     </div>
     <p style="font-size: 0.92rem; color: var(--muted); font-weight: 300; line-height: 1.8; margin-bottom: 1.5rem; max-width: 650px;">
-      Beyond academic publishing, I have regularly written about politics and public policy for a wider audience. My op-eds and analyses have appeared in outlets like:
+      Beyond academic publishing, I have regularly written about politics and public policy for a wider audience. Some op-eds or analyses are:
     </p>
-    <div class="cards-row" style="margin-bottom: 1.5rem;">
-      <div class="card highlight">
-        <div class="card-icon">🇪🇸</div>
-        <h3>El País</h3>
-        <p>Articles on Spanish politics and public policy in Spain's newspaper of record.</p>
-        <a href="https://elpais.com/autor/ignacio-jurado-nebreda/#?rel=author_top" class="card-link" target="_blank">Read my articles →</a>
-      </div>
-      <div class="card highlight">
-        <div class="card-icon">🌐</div>
-        <h3>Letras Libres</h3>
-        <p>Op-eds on UK politics, Brexit, and the Conservative Party for this leading Spanish-language literary and political magazine.</p>
-        <a href="https://letraslibres.com/author/ignacio-jurado/" class="card-link" target="_blank">Read my op-eds →</a>
-      </div>
-      <div class="card highlight">
-        <div class="card-icon">📝</div>
-        <h3>El Confidencial</h3>
-        <p>Articles on Spanish and European politics, coalition governance, and territorial debates.</p>
-        <a href="https://www.elconfidencial.com/autores/ignacio-jurado-4115/" class="card-link" target="_blank">Read my articles →</a>
-      </div>
-    </div>
     <ul class="writing-list">
       <li class="writing-item">
         <div class="writing-dot"></div>
         <div>
-          <div class="writing-title"><a href="https://www.infolibre.es/opinion/luces-rojas/busca-proyecto-perdido_1_1095181.html">Se busca proyecto perdido</a></div>
+          <div class="writing-title"><a href="https://elpais.com/elpais/2019/11/10/opinion/1573411573_710470.html" target="_blank">Sánchez pierde todas sus apuestas</a></div>
+          <div class="writing-meta">El País · November 2019</div>
+        </div>
+      </li>
+      <li class="writing-item">
+        <div class="writing-dot"></div>
+        <div>
+          <div class="writing-title"><a href="https://elpais.com/elpais/2018/12/03/opinion/1543850936_658666.html" target="_blank">La irrupción de Vox</a></div>
+          <div class="writing-meta">El País · December 2018</div>
+        </div>
+      </li>
+      <li class="writing-item">
+        <div class="writing-dot"></div>
+        <div>
+          <div class="writing-title"><a href="https://elpais.com/diario/2009/11/23/opinion/1258930811_850215.html" target="_blank">¿Afectará el 'caso Gürtel' en las elecciones?</a></div>
+          <div class="writing-meta">El País · November 2009</div>
+        </div>
+      </li>
+      <li class="writing-item">
+        <div class="writing-dot"></div>
+        <div>
+          <div class="writing-title"><a href="https://www.elconfidencial.com/area-privada-ec-exclusivo/2020-10-02/por-que-hay-tanta-polarizacion-politica-en-espana-y-el-mundo_2773548/" target="_blank">Por qué hay tanta polarización política en España y el mundo</a></div>
+          <div class="writing-meta">El Confidencial · October 2020</div>
+        </div>
+      </li>
+      <li class="writing-item">
+        <div class="writing-dot"></div>
+        <div>
+          <div class="writing-title"><a href="https://letraslibres.com/politica/brexit-un-sintoma-del-virus-populista/" target="_blank">Brexit: un síntoma del virus populista</a></div>
+          <div class="writing-meta">Letras Libres · October 2019</div>
+        </div>
+      </li>
+      <li class="writing-item">
+        <div class="writing-dot"></div>
+        <div>
+          <div class="writing-title"><a href="https://letraslibres.com/politica/brexit-may-y-el-acuerdo-imposible/" target="_blank">Brexit: May y el acuerdo imposible</a></div>
+          <div class="writing-meta">Letras Libres · May 2019</div>
+        </div>
+      </li>
+      <li class="writing-item">
+        <div class="writing-dot"></div>
+        <div>
+          <div class="writing-title"><a href="https://www.infolibre.es/opinion/luces-rojas/busca-proyecto-perdido_1_1095181.html" target="_blank">Se busca proyecto perdido</a></div>
           <div class="writing-meta">infoLibre</div>
         </div>
       </li>
       <li class="writing-item">
         <div class="writing-dot"></div>
         <div>
-          <div class="writing-title"><a href="https://es.weforum.org/stories/2017/02/hay-relacion-entre-globalizacion-e-insatisfaccion-con-democracia/">¿Hay relación entre globalización e insatisfacción con la democracia?</a></div>
+          <div class="writing-title"><a href="https://es.weforum.org/stories/2017/02/hay-relacion-entre-globalizacion-e-insatisfaccion-con-democracia/" target="_blank">¿Hay relación entre globalización e insatisfacción con la democracia?</a></div>
           <div class="writing-meta">World Economic Forum · February 2017</div>
         </div>
       </li>
       <li class="writing-item">
         <div class="writing-dot"></div>
         <div>
-          <div class="writing-title"><a href="http://blogs.lse.ac.uk/europpblog/2015/07/20/why-greeks-voted-the-way-they-did-in-the-bailout-referendum/">Why Greeks voted the way they did in the bailout referendum</a></div>
+          <div class="writing-title"><a href="http://blogs.lse.ac.uk/europpblog/2015/07/20/why-greeks-voted-the-way-they-did-in-the-bailout-referendum/" target="_blank">Why Greeks voted the way they did in the bailout referendum</a></div>
           <div class="writing-meta">LSE EUROPP Blog · July 2015</div>
         </div>
       </li>
       <li class="writing-item">
         <div class="writing-dot"></div>
         <div>
-          <div class="writing-title"><a href="http://blogs.lse.ac.uk/europpblog/2014/01/07/regionalised-party-systems-lead-to-lower-social-spending/">Electoral Regionalisation leads to lower social spending</a></div>
+          <div class="writing-title"><a href="http://blogs.lse.ac.uk/europpblog/2014/01/07/regionalised-party-systems-lead-to-lower-social-spending/" target="_blank">Electoral Regionalisation leads to lower social spending</a></div>
           <div class="writing-meta">LSE EUROPP Blog · January 2014</div>
         </div>
       </li>
@@ -232,6 +238,7 @@
       <span class="outlet-tag intl">O Globo (Brazil)</span>
       <span class="outlet-tag intl">YLE (Finland)</span>
       <span class="outlet-tag intl">La Dépêche (France)</span>
+      <span class="outlet-tag intl">Infobae</span>
       <span class="outlet-tag">Cadena SER</span>
       <span class="outlet-tag">RTVE</span>
       <span class="outlet-tag">RNE</span>
@@ -249,12 +256,9 @@
       <span class="outlet-tag">El Independiente</span>
       <span class="outlet-tag">Newtral</span>
       <span class="outlet-tag">Público</span>
-      <span class="outlet-tag intl">Infobae</span>
     </div>
 
     <ul class="media-list">
-
-      <!-- NEW ENTRIES -->
       <li class="media-item">
         <span class="media-outlet">Público</span>
         <div>
@@ -272,230 +276,251 @@
       <li class="media-item">
         <span class="media-outlet">RTVE</span>
         <div>
-          <div class="media-title"><a href="https://www.youtube.com/watch?v=ALYZ5SEpGVI" target="_blank">Election night .-Castilla y León on Spanish politics</a></div>
+          <div class="media-title"><a href="https://www.youtube.com/watch?v=ALYZ5SEpGVI" target="_blank">Election night — Castilla y León on Spanish politics</a></div>
           <div class="media-date">2026</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">NOS</span>
         <div>
-          <div class="media-title"><a href="https://nos.nl/nieuwsuur/video/2605099-spanje-als-enige-eu-land-uitgesproken-kritisch-op-vs">Interview in Dutch public television</a></div>
+          <div class="media-title"><a href="https://nos.nl/nieuwsuur/video/2605099-spanje-als-enige-eu-land-uitgesproken-kritisch-op-vs" target="_blank">Interview in Dutch public television</a></div>
           <div class="media-date">March 2026</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">El Periódico</span>
         <div>
-          <div class="media-title"><a href="https://www.elperiodico.com/es/politica/20251228/edad-oro-emociones-negativas-motor-politica-elecciones-extremadura-125106361">La edad de oro de las emociones negativas como motor de la política</a></div>
+          <div class="media-title"><a href="https://www.elperiodico.com/es/politica/20251228/edad-oro-emociones-negativas-motor-politica-elecciones-extremadura-125106361" target="_blank">La edad de oro de las emociones negativas como motor de la política</a></div>
           <div class="media-date">December 2025</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">La Sexta</span>
         <div>
-          <div class="media-title"><a href="https://www.lasexta.com/elecciones/autonomicas/vox-descarta-exigir-sillones-extremadura-quemarse_20251223694a7325af09df501091e286.html">Vox descarta exigir sillones en Extremadura</a></div>
+          <div class="media-title"><a href="https://www.lasexta.com/elecciones/autonomicas/vox-descarta-exigir-sillones-extremadura-quemarse_20251223694a7325af09df501091e286.html" target="_blank">Vox descarta exigir sillones en Extremadura</a></div>
           <div class="media-date">December 2025</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Newtral</span>
         <div>
-          <div class="media-title"><a href="https://www.newtral.es/europa-trump-otan-amenaza-encuesta-yougov/20250311/">El 71% de los europeos occidentales considera que Trump es una amenaza para la paz</a></div>
+          <div class="media-title"><a href="https://www.newtral.es/europa-trump-otan-amenaza-encuesta-yougov/20250311/" target="_blank">El 71% de los europeos occidentales considera que Trump es una amenaza para la paz</a></div>
           <div class="media-date">March 2025</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Infobae</span>
         <div>
-          <div class="media-title"><a href="https://www.infobae.com/espana/agencias/2025/02/20/sumar-y-podemos-ante-su-dilema-electoral-juntos-o-separados/">Sumar y Podemos ante su dilema electoral: juntos o separados</a></div>
+          <div class="media-title"><a href="https://www.infobae.com/espana/agencias/2025/02/20/sumar-y-podemos-ante-su-dilema-electoral-juntos-o-separados/" target="_blank">Sumar y Podemos ante su dilema electoral: juntos o separados</a></div>
           <div class="media-date">February 2025</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Cadena SER</span>
         <div>
-          <div class="media-title"><a href="https://cadenaser.com/nacional/2024/07/12/el-analista-politico-ignacio-jurado-considera-que-la-ruptura-de-vox-responde-a-la-amenaza-de-alvise-hay-una-parte-de-los-votantes-que-quieren-irse-a-una-fuerza-mucho-mas-radical-cadena-ser/">On the Vox split and the threat from Alvise's movement</a></div>
+          <div class="media-title"><a href="https://cadenaser.com/nacional/2024/07/12/el-analista-politico-ignacio-jurado-considera-que-la-ruptura-de-vox-responde-a-la-amenaza-de-alvise-hay-una-parte-de-los-votantes-que-quieren-irse-a-una-fuerza-mucho-mas-radical-cadena-ser/" target="_blank">On the Vox split and the threat from Alvise's movement</a></div>
           <div class="media-date">July 2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">La Sexta</span>
         <div>
-          <div class="media-title"><a href="https://www.lasexta.com/noticias/nacional/que-recordamos-nombres-algunos-presidentes-autonomicos-otros_202406226676c4f8901ca9000185beeb.html">¿Por qué recordamos los nombres de algunos presidentes autonómicos y otros no?</a></div>
+          <div class="media-title"><a href="https://www.lasexta.com/noticias/nacional/que-recordamos-nombres-algunos-presidentes-autonomicos-otros_202406226676c4f8901ca9000185beeb.html" target="_blank">¿Por qué recordamos los nombres de algunos presidentes autonómicos y otros no?</a></div>
           <div class="media-date">June 2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Cadena SER</span>
         <div>
-          <div class="media-title"><a href="https://cadenaser.com/audio/1718027441_447_cut/">Political analysis on Spanish politics</a></div>
+          <div class="media-title"><a href="https://cadenaser.com/audio/1718027441_447_cut/" target="_blank">Political analysis on Spanish politics</a></div>
           <div class="media-date">June 2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Reuters</span>
         <div>
-          <div class="media-title"><a href="https://www.reuters.com/world/europe/catalonias-separatist-leader-quits-refuses-back-socialists-form-regional-2024-05-13/">Catalonia's separatist leader quits, refuses to back Socialists</a></div>
+          <div class="media-title"><a href="https://www.reuters.com/world/europe/catalonias-separatist-leader-quits-refuses-back-socialists-form-regional-2024-05-13/" target="_blank">Catalonia's separatist leader quits, refuses to back Socialists</a></div>
           <div class="media-date">May 2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Reuters</span>
         <div>
-          <div class="media-title"><a href="https://www.cnbc.com/amp/2024/04/29/spains-pedro-sanchez-stays-on-as-prime-minister-after-weighing-exit.html">On Sánchez's decision to stay on as PM after corruption probe</a></div>
+          <div class="media-title"><a href="https://www.cnbc.com/amp/2024/04/29/spains-pedro-sanchez-stays-on-as-prime-minister-after-weighing-exit.html" target="_blank">On Sánchez's decision to stay on as PM after corruption probe</a></div>
           <div class="media-date">April 2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Cadena SER</span>
         <div>
-          <div class="media-title"><a href="https://cadenaser.com/nacional/2024/04/29/ultima-hora-de-la-decision-de-pedro-sanchez-comparecencia-del-presidente-del-gobierno-y-reacciones-tras-su-carta-en-directo-cadena-ser/">On Sánchez's letter and decision to continue as PM</a></div>
+          <div class="media-title"><a href="https://cadenaser.com/nacional/2024/04/29/ultima-hora-de-la-decision-de-pedro-sanchez-comparecencia-del-presidente-del-gobierno-y-reacciones-tras-su-carta-en-directo-cadena-ser/" target="_blank">On Sánchez's letter and decision to continue as PM</a></div>
           <div class="media-date">April 2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Cadena SER</span>
         <div>
-          <div class="media-title"><a href="https://cadenaser.com/audio/1714395758481/">Political analysis</a></div>
+          <div class="media-title"><a href="https://cadenaser.com/audio/1714395758481/" target="_blank">Political analysis</a></div>
           <div class="media-date">April 2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Yahoo/Reuters</span>
         <div>
-          <div class="media-title"><a href="https://www.yahoo.com/news/come-clean-spaniards-demand-hunt-152519696.html">'Come clean': Spaniards demand answers</a></div>
+          <div class="media-title"><a href="https://www.yahoo.com/news/come-clean-spaniards-demand-hunt-152519696.html" target="_blank">'Come clean': Spaniards demand answers</a></div>
           <div class="media-date">2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Tagesspiegel</span>
         <div>
-          <div class="media-title"><a href="https://www.tagesspiegel.de/internationales/tritt-sanchez-aus-protest-zuruck-das-verbirgt-sich-hinter-dem-wutbrief-des-spanischen-premiers-11571152.html">Tritt Sánchez aus Protest zurück? Das verbirgt sich hinter dem Wutbrief des spanischen Premiers</a></div>
+          <div class="media-title"><a href="https://www.tagesspiegel.de/internationales/tritt-sanchez-aus-protest-zuruck-das-verbirgt-sich-hinter-dem-wutbrief-des-spanischen-premiers-11571152.html" target="_blank">Tritt Sánchez aus Protest zurück? Das verbirgt sich hinter dem Wutbrief des spanischen Premiers</a></div>
           <div class="media-date">April 2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">El Confidencial</span>
         <div>
-          <div class="media-title"><a href="https://blogs.elconfidencial.com/espana/tribuna/2024-03-25/irredentismo-70-fractura-entre-junts-erc_3854597/">El irredentismo del 70% y la fractura entre Junts y ERC</a></div>
+          <div class="media-title"><a href="https://blogs.elconfidencial.com/espana/tribuna/2024-03-25/irredentismo-70-fractura-entre-junts-erc_3854597/" target="_blank">El irredentismo del 70% y la fractura entre Junts y ERC</a></div>
           <div class="media-date">March 2024</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">BBC</span>
         <div>
-          <div class="media-title"><a href="https://www.bbc.co.uk/programmes/w172z072023kty5">Spanish elections result in hung parliament</a></div>
+          <div class="media-title"><a href="https://www.bbc.co.uk/programmes/w172z072023kty5" target="_blank">Spanish elections result in hung parliament</a></div>
           <div class="media-date">July 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Reuters</span>
         <div>
-          <div class="media-title"><a href="https://news.yahoo.com/spain-faces-political-uncertainty-fails-030339158.html">Spain's 2023 election deadlock and the role of Puigdemont</a></div>
+          <div class="media-title"><a href="https://news.yahoo.com/spain-faces-political-uncertainty-fails-030339158.html" target="_blank">Spain's 2023 election deadlock and the role of Puigdemont</a></div>
           <div class="media-date">July 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">El Confidencial</span>
         <div>
-          <div class="media-title"><a href="https://www.elconfidencial.com/espana/2023-07-07/polarizacion-debate-territorial-tercio-estado-autonomias_3685493/">Polarización y debate territorial: un tercio contra el Estado de las Autonomías</a></div>
+          <div class="media-title"><a href="https://www.elconfidencial.com/espana/2023-07-07/polarizacion-debate-territorial-tercio-estado-autonomias_3685493/" target="_blank">Polarización y debate territorial: un tercio contra el Estado de las Autonomías</a></div>
           <div class="media-date">July 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Tagesspiegel</span>
         <div>
-          <div class="media-title"><a href="https://www.tagesspiegel.de/internationales/regierungsbildung-in-spanien-pedro-sanchez-ist-fast-am-ziel-10715794.html">Regierungsbildung in Spanien: Pedro Sánchez ist fast am Ziel</a></div>
+          <div class="media-title"><a href="https://www.tagesspiegel.de/internationales/regierungsbildung-in-spanien-pedro-sanchez-ist-fast-am-ziel-10715794.html" target="_blank">Regierungsbildung in Spanien: Pedro Sánchez ist fast am Ziel</a></div>
           <div class="media-date">2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Tagesspiegel</span>
         <div>
-          <div class="media-title"><a href="https://www.tagesspiegel.de/internationales/bald-konnten-rechtspopulisten-mitregieren-steht-spanien-vor-einem-richtungswechsel-10188154.html">Bald könnten Rechtspopulisten mitregieren: Steht Spanien vor einem Richtungswechsel?</a></div>
+          <div class="media-title"><a href="https://www.tagesspiegel.de/internationales/bald-konnten-rechtspopulisten-mitregieren-steht-spanien-vor-einem-richtungswechsel-10188154.html" target="_blank">Bald könnten Rechtspopulisten mitregieren: Steht Spanien vor einem Richtungswechsel?</a></div>
           <div class="media-date">July 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">El Confidencial</span>
         <div>
-          <div class="media-title"><a href="https://www.elconfidencial.com/economia/2023-11-14/jovenes-crecimiento-economico-riqueza_3773072/">Jóvenes, crecimiento económico y riqueza</a></div>
+          <div class="media-title"><a href="https://www.elconfidencial.com/economia/2023-11-14/jovenes-crecimiento-economico-riqueza_3773072/" target="_blank">Jóvenes, crecimiento económico y riqueza</a></div>
           <div class="media-date">November 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">El Confidencial</span>
         <div>
-          <div class="media-title"><a href="https://blogs.elconfidencial.com/espana/tribuna/2023-11-12/verdadera-anomalia-politica-espanola_3772083/">La verdadera anomalía política española</a></div>
+          <div class="media-title"><a href="https://blogs.elconfidencial.com/espana/tribuna/2023-11-12/verdadera-anomalia-politica-espanola_3772083/" target="_blank">La verdadera anomalía política española</a></div>
           <div class="media-date">November 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Cinco Días</span>
         <div>
-          <div class="media-title"><a href="https://cincodias.elpais.com/economia/2023-11-14/el-30-de-los-jovenes-espanoles-tiene-dificultades-para-cubrir-sus-gastos-basicos.html">El 30% de los jóvenes españoles tiene dificultades para cubrir sus gastos básicos</a></div>
+          <div class="media-title"><a href="https://cincodias.elpais.com/economia/2023-11-14/el-30-de-los-jovenes-espanoles-tiene-dificultades-para-cubrir-sus-gastos-basicos.html" target="_blank">El 30% de los jóvenes españoles tiene dificultades para cubrir sus gastos básicos</a></div>
           <div class="media-date">November 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Europa Press</span>
         <div>
-          <div class="media-title"><a href="https://www.europapress.es/sociedad/noticia-265-espanoles-30-34-anos-aun-vive-padres-estudio-20231114000052.html">El 26,5% de los españoles de 30-34 años aún vive con sus padres</a></div>
+          <div class="media-title"><a href="https://www.europapress.es/sociedad/noticia-265-espanoles-30-34-anos-aun-vive-padres-estudio-20231114000052.html" target="_blank">El 26,5% de los españoles de 30-34 años aún vive con sus padres</a></div>
           <div class="media-date">November 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">La Dépêche</span>
         <div>
-          <div class="media-title"><a href="https://www.ladepeche.fr/2023/12/31/en-espagne-le-chant-du-cygne-pour-podemos-le-parti-de-la-gauche-radicale-11670425.php">En Espagne, le chant du cygne pour Podemos, le parti de la gauche radicale</a></div>
+          <div class="media-title"><a href="https://www.ladepeche.fr/2023/12/31/en-espagne-le-chant-du-cygne-pour-podemos-le-parti-de-la-gauche-radicale-11670425.php" target="_blank">En Espagne, le chant du cygne pour Podemos, le parti de la gauche radicale</a></div>
           <div class="media-date">December 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">La Sexta</span>
         <div>
-          <div class="media-title"><a href="https://www.lasexta.com/programas/lasexta-clave/campana-centrada-eta-beneficiara-bildu-movilizara-voto-izquierda-impulsara_202305196467c9c26cbd630001acb235.html">laSexta Clave — ¿Una campaña centrada en ETA beneficiará a Bildu?</a></div>
+          <div class="media-title"><a href="https://www.lasexta.com/programas/lasexta-clave/campana-centrada-eta-beneficiara-bildu-movilizara-voto-izquierda-impulsara_202305196467c9c26cbd630001acb235.html" target="_blank">laSexta Clave — ¿Una campaña centrada en ETA beneficiará a Bildu?</a></div>
           <div class="media-date">May 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">France 24</span>
         <div>
-          <div class="media-title"><a href="https://www.france24.com/en/europe/20230528-spain-s-regional-elections-conservatives-leading-with-a-third-of-votes-in">Spain's rightward swing in local and regional elections</a></div>
+          <div class="media-title"><a href="https://www.france24.com/en/europe/20230528-spain-s-regional-elections-conservatives-leading-with-a-third-of-votes-in" target="_blank">Spain's rightward swing in local and regional elections</a></div>
           <div class="media-date">May 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">O Globo</span>
         <div>
-          <div class="media-title"><a href="https://oglobo.globo.com/mundo/noticia/2023/05/sanchez-antecipa-eleicao-na-espanha-para-tentar-cortar-pela-raiz-a-ascensao-da-direita.ghtml">Sánchez antecipa eleição na Espanha para cortar a ascensão da direita</a></div>
+          <div class="media-title"><a href="https://oglobo.globo.com/mundo/noticia/2023/05/sanchez-antecipa-eleicao-na-espanha-para-tentar-cortar-pela-raiz-a-ascensao-da-direita.ghtml" target="_blank">Sánchez antecipa eleição na Espanha para cortar a ascensão da direita</a></div>
           <div class="media-date">May 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">O Globo</span>
         <div>
-          <div class="media-title"><a href="https://oglobo.globo.com/mundo/noticia/2023/05/nas-eleicoes-da-espanha-esquerda-apostara-em-medo-do-vox-enquanto-direita-enfatizara-temor-separatista.ghtml">Nas eleições da Espanha, esquerda apostará em medo do Vox</a></div>
+          <div class="media-title"><a href="https://oglobo.globo.com/mundo/noticia/2023/05/nas-eleicoes-da-espanha-esquerda-apostara-em-medo-do-vox-enquanto-direita-enfatizara-temor-separatista.ghtml" target="_blank">Nas eleições da Espanha, esquerda apostará em medo do Vox</a></div>
           <div class="media-date">May 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">CNN Español</span>
         <div>
-          <div class="media-title"><a href="https://cnnespanol.cnn.com/2023/05/28/elecciones-municipales-y-autonomicas-de-espana-el-partido-popular-logra-triunfos-en-los-comicios-reux">El PP logra triunfos en las elecciones municipales y autonómicas</a></div>
+          <div class="media-title"><a href="https://cnnespanol.cnn.com/2023/05/28/elecciones-municipales-y-autonomicas-de-espana-el-partido-popular-logra-triunfos-en-los-comicios-reux" target="_blank">El PP logra triunfos en las elecciones municipales y autonómicas</a></div>
           <div class="media-date">May 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">Die Zeit</span>
         <div>
-          <div class="media-title"><a href="https://www.zeit.de/politik/ausland/2023-05/kommunalwahlen-spanien-volkspartei-vox">Kommunalwahlen Spanien: Volkspartei und Vox</a></div>
+          <div class="media-title"><a href="https://www.zeit.de/politik/ausland/2023-05/kommunalwahlen-spanien-volkspartei-vox" target="_blank">Kommunalwahlen Spanien: Volkspartei und Vox</a></div>
           <div class="media-date">May 2023</div>
         </div>
       </li>
       <li class="media-item">
         <span class="media-outlet">La Tercera</span>
         <div>
-          <div class="media-title"><a href="https://www.latercera.com/la-tercera-sabado/noticia/espana-tras-el-23-j-el-regreso-del-bipartidismo/ALAUTLWELRE7XOXF7Q6KLHTGK4/">España tras el 23-J: el regreso del bipartidismo</a></div>
+          <div class="media-title"><a href="https://www.latercera.com/la-tercera-sabado/noticia/espana-tras-el-23-j-el-regreso-del-bipartidismo/ALAUTLWELRE7XOXF7Q6KLHTGK4/" target="_blank">España tras el 23-J: el regreso del bipartidismo</a></div>
           <div class="media-date">July 2023</div>
-        </div
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>© Ignacio Jurado</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
